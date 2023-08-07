@@ -1,0 +1,14 @@
+{
+    "pdb_id": "7bz5",
+    "ab_chain_list": ["H", "L"],
+    "ag_chain_list": ["A"], 
+    "design_chain": "H", 
+    "cdr_type": "H3", 
+    "cdr_seq": "EAYGMDV", 
+    "out_dir": "/home/jjs092/jupyter/contents/loop/CA_model/Github_test/",
+    "FoldX_dir":"/home/jjs092/foldx_20231231",
+    "IA_dir":"/home/jjs092/rosetta/rosetta_src_2020.08.61146_bundle/main/source/bin/InterfaceAnalyzer.linuxgccrelease",
+    "n_sample": 1,
+    "n_relax": 1
+}
+
