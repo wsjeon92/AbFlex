@@ -50,10 +50,9 @@ config.json
 3. run "run.py" file
 
 ## Output file description
-whether or not to use FoldX and Rosetta InterfaceAnalyzer, the file below will be generated as default.
+Whether or not to use FoldX and Rosetta InterfaceAnalyzer, the file below will be generated as default.
 1. ```{pdb_id}_{chain_id}_{CDR_type}_{sample#}_openmm.pdb```: The relaxed full-atom model built with the predicted CDR C alpha coordinates and samples sequences.
 
-If you using Rosetta InterfaceAnalzer or FoldX to evaluate the binding energy and n_relax>1,
-
+If you using Rosetta InterfaceAnalzer or FoldX to evaluate the binding energy and n_relax>1, the below files will be generated additionally.
 2.  ```{pdb_id}_{chain_id}_{CDR_type}_{sample#}_best_{Foldx or IA}.pdb```: The best binding energy structure through the relaxation
 3.  ```{pdb_id}_*_energy_scores.xlsx```: Calculated binding energies of the generated samples.
