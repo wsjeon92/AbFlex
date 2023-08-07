@@ -19,7 +19,7 @@ For binding energy calculation, you need to install Rosetta or FoldX additionall
 12. Rosetta (https://new.rosettacommons.org/demos/latest/tutorials/install_build/install_build)
 
 ## Demo
-1. Edit the configuration file "config.json" for your purpose. The configuration file describes information about which cdr to design.
+1. Edit the configuration file "config.json" for your purpose. The configuration file describes information about which cdr to design. **All the directories should be entered as an absolute path.**
 ```
 config.json
 {
@@ -31,7 +31,8 @@ config.json
     "Design_chain": "H",         # str. One antibody chain that has the CDR to be designed
     "cdr_type": "H3",            # str. CDR type to be designed
     "cdr_seq": "EAYGMDV",        # str. The original sequence of the CDR to be designed in the input PDB file.
-    "out_dir": "~/AbFlex/",      # str. The working directory. Output files will be generated here.
+    "out_dir": "/absolute-path/AbFlex/your-working-dir/",
+                                 # str. The working directory. Output files will be generated here.
     "FoldX_dir": "",             # str. If you wish to utilize FoldX, please input the location of
                                    the executable FoldX file. If not, you may leave it blank.
     "IA_dir": "",                # str. If you wish to utilize Rosetta InterfaceAnalyzer, please input
