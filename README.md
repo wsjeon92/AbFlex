@@ -28,9 +28,9 @@ config.json
                                    It should contain all the antibody chains in the input PDB file.
     "ag_chain_list": ["A"],      # list. Antigen chains in the input complex.
                                    It should contain all the antigen chains in the input PDB file.
-    "Design_chain": "H",         # str. One antibody chain that has the CDR to be designed
+    "Design_chain": "H",         # str. One antibody chain to be designed
     "cdr_type": "H3",            # str. CDR type to be designed
-    "cdr_seq": "EAYGMDV",        # str. The original sequence of the CDR to be designed in the input PDB file.
+    "cdr_seq": "EAYGMDV",        # str. The original sequence of the CDR is to be designed in the input PDB file.
     "out_dir": "/absolute-path/AbFlex/your-working-dir/",
                                  # str. The working directory. Output files will be generated here.
     "FoldX_dir": "",             # str. If you wish to utilize FoldX, please input the location of
@@ -39,9 +39,9 @@ config.json
                                    the location of the executable InterfaceAnalyzer file.
                                    e.g. "/where-the-rosetta-install/bin/InterfaceAnalyzer.linuxgccrelease"
                                    If not, you may leave it blank.
-    "n_sample": 1,               # int. Number of CDR structure samples to be generated from the predicted results.
-                                   The samples will have different CDR sequences each other.
-    "n_relax": 1,                # int. Number of relaxation by openMM. If you use FoldX or Rosetta InterfaceAnalyer,
+    "n_sample": 1,               # int. The number of CDR structure samples to be generated from the predicted results.
+                                   The samples will have different CDR sequences from each other.
+    "n_relax": 1,                # int. The number of relaxations by openMM. If you use FoldX or Rosetta InterfaceAnalyer,
                                    then use 1~10. otherwise, set it to 1.
 }
 ```
