@@ -15,6 +15,7 @@ Under Python libraries are needed to run AbFlex. The dependencies below are veri
 10. BioPython: 1.77
 
 For binding energy calculation, you need to install Rosetta or FoldX additionally. Otherwise, AbFlex will generate designed PDB files only.
+
 11. FoldX (https://foldxsuite.crg.eu/)
 12. Rosetta (https://new.rosettacommons.org/demos/latest/tutorials/install_build/install_build)
 
