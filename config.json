@@ -5,7 +5,7 @@
     "design_chain": "H", 
     "cdr_type": "H3", 
     "cdr_seq": "EAYGMDV", 
-    "out_dir": "~/AbFlex/",
+    "out_dir": "/Absolute-path-for/AbFlex/",
     "FoldX_dir":"",
     "IA_dir":"",
     "n_sample": 1,
