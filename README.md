@@ -32,7 +32,7 @@ config.json
     "Design_chain": "H",         # str. One antibody chain to be designed
     "cdr_type": "H3",            # str. CDR type to be designed
     "cdr_seq": "EAYGMDV",        # str. The original sequence of the CDR is to be designed in the input PDB file.
-    "out_dir": "/_absolute-path_/AbFlex/_your-working-dir_/",
+    "out_dir": "/_absolute-path-to_/AbFlex/_your-working-dir_/",
                                  # str. The working directory. Output files will be generated here. **The directory should be absolute path.**
     "FoldX_dir": "",             # str. If you wish to utilize FoldX, please input the location of
                                    the executable FoldX file. If not, you may leave it blank.
