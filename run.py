@@ -83,7 +83,8 @@ for c_ab in ab_chain_list:
         model = structure[0]
         chain_ab = model[c_ab]
     except:
-        continue    
+        print('error occured during loading the antibody chain using biopython')
+        sys.exit()     
 
     ### define residue id
     ab_seq_id = list(chain_ab.child_dict.keys())
@@ -241,6 +242,7 @@ parser = PDBParser(PERMISSIVE=1)
 
 model_gnn.eval()
 model_pred.eval()
+start_time = time.time()
 with torch.no_grad():
     rec_info = {'H1':[], 'H2':[], 'H3':[], 'L1':[], 'L2':[], 'L3':[]}
     rec_coor = {'H1':[], 'H2':[], 'H3':[], 'L1':[], 'L2':[], 'L3':[]}
@@ -484,4 +486,4 @@ if IA_dir!="":
     df_ia= pd.DataFrame(rec_BE_ia)
     df_ia.to_excel(out_dir+file_name.split('_')[0]+'_ia_energy_scores.xlsx', header=['file_name']+[f'sample {i}' for i in range(n_relax)])
 print('job is done!!!')
-
+print("---{}s seconds---".format(time.time()-start_time))
