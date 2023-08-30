@@ -236,7 +236,7 @@ except:
     print('pre-trained model is not loaded.')
 
 #load input data
-input_data=torch.load(f'{out_dir}input_7bz5_H_H3')
+input_data=torch.load(f'{out_dir}input_{pdb_id}_{D_chain}_{cdr_type}')
 parser = PDBParser(PERMISSIVE=1)
 
 model_gnn.eval()
