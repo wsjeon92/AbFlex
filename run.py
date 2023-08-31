@@ -52,6 +52,10 @@ print(config)
 vocab = ['ALA', 'ARG', 'ASN', 'ASP', 'CYS', 'GLN', 'GLU', 'GLY', 'HIS', 'ILE', 'LEU', 'LYS', 'MET', 'PHE', 'PRO', 'SER', 'THR', 'TRP', 'TYR', 'VAL', '*']
 char2idx = {u:i for i, u in enumerate(vocab)}
 idx2char = ['A',  'R',  'N',  'D',  'C',  'Q',  'E',  'G',  'H',  'I',  'L',  'K',  'M',  'F',  'P',  'S',  'T', 'W', 'Y',  'V']
+d3to1 = {'CYS': 'C', 'ASP': 'D', 'SER': 'S', 'GLN': 'Q', 'LYS': 'K',
+ 'ILE': 'I', 'PRO': 'P', 'THR': 'T', 'PHE': 'F', 'ASN': 'N',
+ 'GLY': 'G', 'HIS': 'H', 'LEU': 'L', 'ARG': 'R', 'TRP': 'W',
+ 'ALA': 'A', 'VAL':'V', 'GLU': 'E', 'TYR': 'Y', 'MET': 'M'}
 
 dataset = []
 structure_id = pdb_id
@@ -347,6 +351,11 @@ while len(seq_cat)<n_sample+1:
             seq_temp.append(vocab[rec_label_all[cdr_id][idx][i]])
     if not seq_temp in seq_cat:
         seq_cat.append(seq_temp)
+
+with open(f"{out_dir}{pdb_id}_{D_chain}_{cdr_type}_sequence_samples.fasta", 'w') as f:
+    for i in range(n_sample):
+        f.write(f'{pdb_id}_{D_chain}_{cdr_type}_sample{i+1}\n')
+        f.write(''.join([d3to1[j] for j in seq_cat[i]])+'\n')
 
 # write PDB files with the predicted cdr coordinates and the sampled sequences.
 for j in range(n_sample):
