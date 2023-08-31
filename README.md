@@ -7,7 +7,7 @@ The below Python libraries are needed to run AbFlex. The dependencies below are 
 2. egnn-pytorch: the latest version from https://github.com/lucidrains/egnn-pytorch
 3. pandas: 1.3.5
 4. numpy: 1.18.5
-5. sci-kit-learn: 1.0
+5. scikit-learn: 1.0
 6. scipy: 1.7.1
 7. PDBFixer: the latest version from https://github.com/openmm/pdbfixer
 8. OpenMM: 7.6 or the latest version from https://github.com/openmm/openmm
