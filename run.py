@@ -64,6 +64,7 @@ cdr_len = len(cdr_seq)
 parser = PDBParser(PERMISSIVE=1)
 
 ## fetch the original pdb if not exist.
+os.system(f'rm {out_dir}{pdb_id}.pdb')
 try:
     if not os.path.isfile(f"{out_dir}{pdb_id}.pdb"):
         pymol.cmd.set('fetch_path', pymol.cmd.exp_path(out_dir), quiet=0)        
@@ -325,11 +326,6 @@ ab_chain = rec_info[cdr_id][idx][1]
 
 # fetch the original pdb if not exist.
 pdb_id=rec_info[cdr_id][idx][0].lower()
-os.system(f'rm {out_dir}{pdb_id}.pdb')
-if not os.path.isfile(f"{out_dir}{pdb_id}.pdb"):
-    pymol.cmd.set('fetch_path', pymol.cmd.exp_path(out_dir), quiet=0)        
-    pymol.cmd.fetch(f"{pdb_id}", type="pdb")
-    print(f"{pdb_id.lower()} is fetched @ {out_dir}")
 
 # remove the "TER" within the same chain. This makes error when use InterfaceAnalyzer.
 with open (f"{out_dir}{rec_info[cdr_id][idx][0].lower()}.pdb", 'r') as f:
@@ -340,6 +336,15 @@ with open (f"{out_dir}{rec_info[cdr_id][idx][0].lower()}.pdb", 'w') as f:
         if line.split()[0]=="TER" and line[13]==previous_chain:
             continue
         f.write(line)
+
+## remove ANISOU and hetero atoms
+pymol.cmd.load(out_dir+pdb_id+'.pdb')
+pymol.cmd.select('hetero_atoms', 'het')
+pymol.cmd.remove('hetero_atoms')
+pymol.cmd.save(out_dir+pdb_id+'.pdb')
+subprocess.run(f"grep -v 'ANISOU' {out_dir}{pdb_id}.pdb > {out_dir}{pdb_id}_no_anisou.pdb", shell=True)
+subprocess.run(f"mv {out_dir}{pdb_id}_no_anisou.pdb {out_dir}{pdb_id}.pdb", shell=True)
+
 
 # sampling n different CDR sequences from the predicted probability distribution.
 while len(seq_cat)<n_sample+1:
