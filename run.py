@@ -354,7 +354,7 @@ while len(seq_cat)<n_sample+1:
 
 with open(f"{out_dir}{pdb_id}_{D_chain}_{cdr_type}_sequence_samples.fasta", 'w') as f:
     for i in range(n_sample):
-        f.write(f'>{pdb_id}_{D_chain}_{cdr_type}_sample{i+1}\n')
+        f.write(f'>{pdb_id}_{D_chain}_{cdr_type}_sample{i}\n')
         f.write(''.join([d3to1[j] for j in seq_cat[i]])+'\n')
 
 # write PDB files with the predicted cdr coordinates and the sampled sequences.
