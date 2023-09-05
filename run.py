@@ -33,7 +33,7 @@ from AbFlex import *
 with open('./config.json') as f:
     config = json.load(f)
 
-pdb_id = config["pdb_id"]
+pdb_id = config["pdb_id"].lower()
 ab_chain_list = config["ab_chain_list"]
 ag_chain_list =config["ag_chain_list"]
 D_chain = config["design_chain"]
