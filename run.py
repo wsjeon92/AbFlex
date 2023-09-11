@@ -468,13 +468,13 @@ for file_name in file_list:
                 os.system(f'rm {out_dir}score_ia.sc')
             os.system(f"{IA_dir} \
                         -s {out_dir}{file_name}_openmm.pdb -interface {interface_chains.replace(',','_')} \
-                        -pack_separated -out:file:score_only {out_dir}score_ia.sc >/dev/null 2>&1")
+                        -pack_separated -out:file:score_only {out_dir}{file_name}_score_ia.sc >/dev/null 2>&1")
             if not os.path.isfile(f'{out_dir}{file_name}_score_ia.sc'):
                 os.system(f"{IA_dir} \
                             -s {out_dir}{file_name}_openmm.pdb -interface {interface_chains.replace(',','_')} \
                             -pack_separated -out:file:score_only {out_dir}{file_name}_score_ia.sc >/dev/null 2>&1")            
                 time.sleep(5)
-            with open(f'{out_dir}score_ia.sc') as f:
+            with open(f'{out_dir}{file_name}_score_ia.sc') as f:
                 a = f.readlines()
             score_ia = float(a[-1].split()[a[-2].split().index('dG_separated')])
             score_list_ia.append(score_ia)
