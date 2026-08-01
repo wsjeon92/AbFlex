@@ -1,5 +1,6 @@
 # AbFlex
 AbFlex is a CDR design method with a given antibody-antigen complex.
+Paper: Woosung Jeon, Dongsup Kim, AbFlex: designing antibody complementarity determining regions with flexible CDR definition, Bioinformatics, Volume 40, Issue 3, March 2024, btae122, https://doi.org/10.1093/bioinformatics/btae122
 
 ## Preparation
 The below Python libraries are needed to run AbFlex. The dependencies below are verified.
