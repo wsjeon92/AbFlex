@@ -3,7 +3,7 @@ AbFlex is a CDR design method with a given antibody-antigen complex.
 Paper: Woosung Jeon, Dongsup Kim, AbFlex: designing antibody complementarity determining regions with flexible CDR definition, Bioinformatics, Volume 40, Issue 3, March 2024, btae122, https://doi.org/10.1093/bioinformatics/btae122
 
 ## Preparation
-The below Python libraries are needed to run AbFlex. The dependencies below are verified.
+AbFlex requires the Python libraries below. The listed versions have been verified to work.
 1. PyTorch: 1.9.1+cu102
 2. egnn-pytorch: the latest version from https://github.com/lucidrains/egnn-pytorch
 3. pandas: 1.3.5
@@ -21,7 +21,7 @@ For binding energy calculation, you'll need to install Rosetta or FoldX. Otherwi
 12. Rosetta (https://new.rosettacommons.org/demos/latest/tutorials/install_build/install_build)
 
 ## Demo
-1. Edit the configuration file "config.json" for your purpose. The configuration file describes information about which cdr to design. **All the directories should be entered as an absolute path.**
+1. Edit the configuration file "config.json" for your purpose. The configuration file describes information about which CDR to design. **All the directories should be entered as an absolute path.**
 ```
 config.json
 {
@@ -49,7 +49,7 @@ config.json
 ```
 
 2. Locate the "config.json" file in the same location as the "run.py" file.
-3. run "run.py" file
+3. run "run.py".
 
 ## Output file description
 Whether or not to use FoldX and Rosetta InterfaceAnalyzer, the file below will be generated as default.
